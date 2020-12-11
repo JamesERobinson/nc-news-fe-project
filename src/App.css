@@ -1,3 +1,107 @@
 .App {
   text-align: center;
+  background-color: rgb(60, 145, 230);
+  color: rgb(38, 61, 66);
+  width: auto;
+  height: fit-content;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.nav {
+  background-color: rgb(60, 145, 230);
+  color: rgb(38, 61, 66);
+}
+.nav-home-button {
+  color: white;
+  text-transform: uppercase;
+  animation-fill-mode: both;
+  background: rgb(38, 61, 66);
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  width: 140px;
+  height: 55px;
+  margin: 0.5em;
+}
+.articles-topic-button{
+  color: aliceblue;
+  background: rgb(38, 61, 66);
+  animation-fill-mode: forwards;
+  font-weight: bold;
+  transition: all 0.4s ease 0s;
+  font-family: Helvetica, sans-serif;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 15px;
+  height: 30px;
+  width:100px;
+}
+.article-main{
+width: auto;
+height: auto;
+align-self: center;
+justify-self: center;
+justify-items: center;
+vertical-align: middle;
+border: 20px solid;
+color: rgb(38, 61, 66);
+} 
+
+ul{
+  list-style: none;
+}
+
+.header-main{
+  background-color: burlywood;
+}
+.article-card{
+  background-color: burlywood;
+  border: cornflowerblue solid 10px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+.article-title{
+  font-size: 2rem;
+}
+.comments-list {
+  border: white solid 10px;
+}
+.main-article{
+  border: white solid 10px;
+}
+.article-link{
+  text-decoration: none;
+  color: inherit
+}
+.article-postdate{
+  
+}
+.article-author{
+  
+}
+.article-comments{
+  
+}
+.articles-topic-button-group{
+  
+ 
+}
+.articles-sort-button {
+  color: aliceblue;
+  background: rgb(38, 61, 66);
+  animation-fill-mode: forwards;
+  font-weight: bold;
+  transition: all 0.4s ease 0s;
+  font-family: Helvetica, sans-serif;
+  padding: 2px;
+  margin: 2px;
+  font-weight: bold;
+  border-radius: 20px;
+  width: 90px;
+  height: 25px;
 }
