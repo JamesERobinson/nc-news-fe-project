@@ -26,14 +26,20 @@ export const fetchArticleComments = (props) => {
 };
 
 export const postComment = (newComment, article_id) => {
-    //const { article_id, newComment } = props
     return axios.post(`https://front-of-news-test.herokuapp.com/api/articles/${article_id}/comments`, newComment).then(({ data }) => {
         return data.comment;
     });
 }
 export const deleteComment = (comment_id) => {
-    //const { article_id, newComment } = props
-    console.log(comment_id,'inside api')
     return axios.delete(`https://front-of-news-test.herokuapp.com/api/comments/${comment_id}`)
-    
+
+}
+
+export const upVoteArticle = (vote_inc, article_id) => {
+
+    return axios.patch(`https://front-of-news-test.herokuapp.com/api/articles/${article_id}`, vote_inc)
+        .then(({ data }) => {
+            console.log('hello patch end', data)
+        })
+
 }

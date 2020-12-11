@@ -10,7 +10,7 @@ const ArticleCard = (props) => {
             <Link className='article-link' to={`article/${article_id}`} >
                 <p className='article-title'> {title}</p>
             </Link>
-            <p className='article-votes'> Votes: <button className='vote-button'>⬇️</button>{votes}<button className='vote-button'>⬇️</button></p>
+            <p className='article-votes'> Votes: {votes}</p>
             <p className='article-postdate'>Post Date: {created_atMod}</p>
             <p className='article-author'>Author: {author}</p>
             <p className='article-comments'>Comments: {comment_count}</p>

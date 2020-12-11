@@ -1,4 +1,5 @@
 import React from 'react'
+import VoteButton from './VoteButton';
 
 export default function ArticleComments(props) {
     const { comments } = props;
@@ -18,7 +19,7 @@ export default function ArticleComments(props) {
                             <div className='comments-list'>
                                 <p>{comment.body}</p>
                                 <p>User: {comment.author}</p>
-                                <p>Votes: {comment.votes}</p>
+                                <VoteButton votes={comment.votes} />
                                 <p>{new Date(comment.created_at).toLocaleDateString('en-gb')}</p>
                                 <button id={`${comment.comment_id}`} onClick={handleSubmit}>Delete</button>
                             </div>

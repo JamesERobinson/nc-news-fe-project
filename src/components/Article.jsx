@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../api';
 import ArticleComments from './ArticleComments';
 import SubmitComment from './SubmitComment';
+import VoteButton from './VoteButton';
 
 export default class Article extends Component {
 
@@ -54,9 +55,12 @@ export default class Article extends Component {
             })
         })
     }
+    voteArticle = (articleId)=>{
+        console.log('hello in artle metod',articleId)
+    }
     render() {
         const { article, comments, isLoading } = this.state;
-
+        
         if (isLoading) {
             return <h2 className='loading'> Article Loading ..</h2>
         }
@@ -68,6 +72,7 @@ export default class Article extends Component {
                     <p>{new Date(article.created_at).toLocaleDateString('en-gb')}</p>
                     <p>{article.author}</p>
                     <p>{article.topic}</p>
+                    <VoteButton votes={article.votes} voteArticle={this.voteArticle} article_id={article.article_id}/>
                 </section>
                 <SubmitComment addComment={this.addComment} />
                 <ArticleComments comments={this.state.comments} delComment={this.delComment} />
