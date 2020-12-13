@@ -16,30 +16,37 @@ export const fetchSingleArticle = (props) => {
             return data;
         });
 };
-export const fetchArticleComments = (props) => {
-    const { article_id } = props;
+export const fetchArticleComments = (articleId) => {
     return axios
-        .get(`https://front-of-news-test.herokuapp.com/api/articles/${article_id}/comments`)
+        .get(`https://front-of-news-test.herokuapp.com/api/articles/${articleId}/comments`)
         .then(({ data }) => {
             return data;
         });
 };
 
-export const postComment = (newComment, article_id) => {
-    return axios.post(`https://front-of-news-test.herokuapp.com/api/articles/${article_id}/comments`, newComment).then(({ data }) => {
-        return data.comment;
-    });
+export const postComment = (newComment, articleId) => {
+    return axios.post(`https://front-of-news-test.herokuapp.com/api/articles/${articleId}/comments`, newComment)
+        .then(({ data }) => {
+            return data.comment;
+        });
 }
 export const deleteComment = (comment_id) => {
     return axios.delete(`https://front-of-news-test.herokuapp.com/api/comments/${comment_id}`)
 
 }
 
-export const upVoteArticle = (vote_inc, article_id) => {
-
-    return axios.patch(`https://front-of-news-test.herokuapp.com/api/articles/${article_id}`, vote_inc)
+export const VoteArticle = (article_id, vote_inc) => {
+    return axios.patch(`https://front-of-news-test.herokuapp.com/api/articles/${article_id}`, { inc_votes: vote_inc })
         .then(({ data }) => {
-            console.log('hello patch end', data)
+            const { votes } = data.article
+            return votes;
+        })
+
+}
+export const VoteComment = (comment_id, vote_inc) => {
+    return axios.patch(`https://front-of-news-test.herokuapp.com/api/comments/${comment_id}`, { inc_votes: vote_inc })
+        .then(({ data }) => {
+            return data.comment;
         })
 
 }

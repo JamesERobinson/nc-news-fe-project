@@ -2,20 +2,26 @@ import React from 'react'
 
 export default function VoteButton(props) {
 
-    const handleClick=(event)=>{
-console.log('got click',event)
-console.log(props,'props here')
-props.voteArticle(props.article_id)
+    const handleClick = (event) => {
+    
+    if(props.article_id){
+        props.voteArticle(props.article_id, event.target.id)
+    } else{
+        
+        props.voteComment(props.comment_id, event.target.id)
+        
+    }
+
     }
 
     return (
 
         <div>
-            <p className='votes-button'> 
-                 <p className='vote-button' onClick={handleClick} >⬆️ </p>
+            <div className='votes-button'>
+                <p className='vote-button' id={1} onClick={handleClick} >⬆️ </p>
                  Votes: {props.votes}
-                 <p className='vote-button' onClick={handleClick}>⬇️</p>
-            </p>
+                <p className='vote-button' id={-1} onClick={handleClick}>⬇️</p>
+            </div>
         </div>
     )
 }

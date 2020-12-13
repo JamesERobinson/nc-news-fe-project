@@ -3,8 +3,8 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import ArticleList from './components/ArticleList';
 import { Router } from '@reach/router';
-import Article from './components/Article'
-import ArticleComments from './components/ArticleComments'
+import Article from './components/Article';
+import ErrorMessage from './components/ErrorMessage';
 function App() {
   return (
     <div className="App">
@@ -14,6 +14,7 @@ function App() {
       <Router>
         <ArticleList path='/' />
         <Article path='/article/:article_id' />
+        <ErrorMessage default errorMessage= "Page not found!"/>
       </Router>
 
     </div>

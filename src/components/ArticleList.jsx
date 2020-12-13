@@ -61,13 +61,13 @@ class ArticleList extends Component {
         return (
             <main className="article-main">
                 <h2>Article List </h2>
-                <topicbuttons className='articles-topic-button-group'>
+                <section className='articles-topic-button-group'>
                     <h3>Topics</h3>
                     <button className='articles-topic-button' id='' onClick={this.updateTopic}>Home</button>
                     <button className='articles-topic-button' id="football" onClick={this.updateTopic}>Football</button>
                     <button className='articles-topic-button' id="cooking" onClick={this.updateTopic}>Cooking</button>
                     <button className='articles-topic-button' id='coding' onClick={this.updateTopic}>Coding</button>
-                </topicbuttons>
+                </section>
                 <ul className="article-list">
                     <section>
                         <h4>Sort By</h4>
@@ -83,9 +83,7 @@ class ArticleList extends Component {
                         );
                     })}
                 </ul>
-                {/* <Router>
-                        <Article />
-                    </Router> */}
+               
             </main >
         )
     }

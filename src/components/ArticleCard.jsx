@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router';
 
 const ArticleCard = (props) => {
-    const { article_id, author, comment_count, created_at, title, topic, votes } = props
+    const { article_id, author, comment_count, created_at, title, votes } = props
     const created_atMod = new Date(created_at).toLocaleDateString('en-gb');
     return (
 
