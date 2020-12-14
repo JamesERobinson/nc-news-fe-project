@@ -1,27 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function VoteButton(props) {
-
-    const handleClick = (event) => {
+export default class VoteButton extends Component {
+state ={ hasVoted: false}
+    handleClick = (event) => {
     
-    if(props.article_id){
-        props.voteArticle(props.article_id, event.target.id)
+    if(this.props.article_id){
+        this.props.voteArticle(this.props.article_id, event.target.id)
     } else{
         
-        props.voteComment(props.comment_id, event.target.id)
+        this.props.voteComment(this.props.comment_id, event.target.id)
         
     }
 
     }
-
+render(){
     return (
 
         <div>
             <div className='votes-button'>
-                <p className='vote-button' id={1} onClick={handleClick} >⬆️ </p>
-                 Votes: {props.votes}
-                <p className='vote-button' id={-1} onClick={handleClick}>⬇️</p>
+                <p className='vote-button' id={1} onClick={this.handleClick} >⬆️ </p>
+                 Votes: {this.props.votes}
+                <p className='vote-button' id={-1} onClick={this.handleClick}>⬇️</p>
             </div>
         </div>
     )
+}
 }

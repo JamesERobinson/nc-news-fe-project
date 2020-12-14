@@ -33,6 +33,7 @@ export default class Comments extends Component {
 
     addComment = (commentToPost) => {
         const { articleId } = this.props;
+        
         api.postComment(commentToPost, articleId).then((newComment) => {
             this.setState((currState) => {
                 return { comments: [newComment, ...currState.comments], }

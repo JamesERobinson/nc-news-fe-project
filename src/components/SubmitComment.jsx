@@ -9,10 +9,12 @@ export default class SubmitComment extends Component {
     handleChange = (event)=>{
         const {value, name} = event.target;
         this.setState({[name]: value})
-        //console.log(this.state,"checking state")
+        
     }
     handleSubmit = (event) =>{
         event.preventDefault();
+        console.log(this.state.body,'body')
+        if(this.state.body==='') return
         this.props.addComment(this.state)
     }
     render() {
